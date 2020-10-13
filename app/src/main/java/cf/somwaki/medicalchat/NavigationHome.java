@@ -74,7 +74,7 @@ public class NavigationHome extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(NavigationHome.this, Chat.class);
+                Intent intent = new Intent(NavigationHome.this, ChatIndividual.class);
 //                SNACKBAR REMOVED HERE
 //                Snackbar.make(view, "Opening Chat", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
