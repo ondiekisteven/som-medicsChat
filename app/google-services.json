@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "208465813214",
+    "firebase_url": "https://medics-api.firebaseio.com",
+    "project_id": "medics-api",
+    "storage_bucket": "medics-api.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208465813214:android:2b2fa3b64e077d28a2ac4f",
+        "android_client_info": {
+          "package_name": "cf.somwaki.medicalchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "208465813214-625uv86799ohi09isqi08q7qan8o49su.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cf.somwaki.medicalchat",
+            "certificate_hash": "c3f2ab60ad364cb16a943da1e4a9c1d1988cda29"
+          }
+        },
+        {
+          "client_id": "208465813214-emh0nohmkd7sadojvi3dub8o4ckmmdhn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiZ0KFKNI9ecC1PggHxdxhY7AkWhQSPJE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "208465813214-emh0nohmkd7sadojvi3dub8o4ckmmdhn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208465813214:android:9d911f7220823f05a2ac4f",
+        "android_client_info": {
+          "package_name": "cf.somwaki.medicsapi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "208465813214-emh0nohmkd7sadojvi3dub8o4ckmmdhn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiZ0KFKNI9ecC1PggHxdxhY7AkWhQSPJE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "208465813214-emh0nohmkd7sadojvi3dub8o4ckmmdhn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
