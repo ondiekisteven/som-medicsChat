@@ -12,8 +12,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ChatsList"></activity>
-        <activity android:name=".ChatIndividual" />
         <activity android:name=".BMI_Calculator" />
         <activity android:name=".ClinicChooser" />
         <activity android:name=".Appointments" />

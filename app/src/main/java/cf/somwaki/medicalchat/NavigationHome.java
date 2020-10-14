@@ -75,7 +75,7 @@ public class NavigationHome extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(NavigationHome.this, ChatIndividual.class);
+                Intent intent = new Intent(NavigationHome.this, Chat.class);
 //                SNACKBAR REMOVED HERE
 //                Snackbar.make(view, "Opening Chat", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
@@ -153,13 +153,7 @@ public class NavigationHome extends AppCompatActivity {
                 startActivity(openClinicChooser);
             }
         });
-        pharmacyCardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent openChatsList = new Intent(getApplicationContext(), ChatsList.class);
-                startActivity(openChatsList);
-            }
-        });
+
     }
 
 }
