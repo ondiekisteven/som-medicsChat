@@ -39,7 +39,7 @@ public class NavigationHome extends AppCompatActivity {
     FirebaseAuth mAuth;
     private static final int RC_SIGN_IN = 123;
     public static String TOKEN;
-    CardView chat_cardView, notificationCardView, appointmentsCardView, eClinicCardView;
+    CardView chat_cardView, notificationCardView, appointmentsCardView, eClinicCardView, pharmacyCardView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +51,7 @@ public class NavigationHome extends AppCompatActivity {
         notificationCardView = (CardView) findViewById(R.id.notifiation_cardView);
         appointmentsCardView = (CardView) findViewById(R.id.appointmentsCard);
         eClinicCardView = (CardView) findViewById(R.id.eClinicCard);
+        pharmacyCardView = (CardView) findViewById(R.id.pharmacyCard);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -150,6 +151,13 @@ public class NavigationHome extends AppCompatActivity {
             public void onClick(View v) {
                 Intent openClinicChooser = new Intent(getApplicationContext(), ClinicChooser.class);
                 startActivity(openClinicChooser);
+            }
+        });
+        pharmacyCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent openChatsList = new Intent(getApplicationContext(), ChatsList.class);
+                startActivity(openChatsList);
             }
         });
     }

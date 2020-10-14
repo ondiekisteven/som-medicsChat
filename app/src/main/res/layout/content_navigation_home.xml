@@ -215,6 +215,7 @@
             android:layout_rowWeight="1"
             android:layout_margin="10dp"
             app:cardElevation="10dp"
+            android:id="@+id/pharmacyCard"
             app:cardCornerRadius="8dp">
 
             <LinearLayout

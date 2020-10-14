@@ -138,7 +138,12 @@ public class ChatIndividual extends AppCompatActivity {
     private void postMessage(String message) {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("messages").child(Objects.requireNonNull(mAuth.getCurrentUser().getUid()));
-        myRef.push().setValue(new ChatMessage(message, mAuth.getCurrentUser().getEmail()));
+        myRef.push().setValue(new ChatMessage(message, mAuth.getCurrentUser().getEmail())).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                Toast.makeText(ChatIndividual.this, "Message sent", Toast.LENGTH_SHORT).show();
+            }
+        });
         input.setText("");
     }
 
