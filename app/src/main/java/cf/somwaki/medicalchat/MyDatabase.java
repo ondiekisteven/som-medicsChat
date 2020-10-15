@@ -21,6 +21,7 @@ public class MyDatabase extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SampleDBContract.Message.CREATE_TABLE);
         db.execSQL(SampleDBContract.Notification.CREATE_TABLE);
+        db.execSQL(SampleDBContract.Remedy.CREATE_TABLE);
     }
 
 
@@ -28,6 +29,7 @@ public class MyDatabase extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + SampleDBContract.Message.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + SampleDBContract.Notification.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + SampleDBContract.Remedy.TABLE_NAME);
         onCreate(db);
     }
 
@@ -65,6 +67,16 @@ public class MyDatabase extends SQLiteOpenHelper {
         return res != -1;
     }
 
+    boolean saveRemedy(RemedyItem item) {
+        SQLiteDatabase database = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(SampleDBContract.Remedy.COLUMN_TITLE, item.getTitle());
+        values.put(SampleDBContract.Remedy.COLUMN_BODY, item.getBody());
+
+        long res = database.insert(SampleDBContract.Remedy.TABLE_NAME, null, values);
+
+        return res != -1;
+    }
 
     /*
     * Method to get all notifications from the database. Returns answer as a cursor
@@ -81,6 +93,16 @@ public class MyDatabase extends SQLiteOpenHelper {
         return database.query(SampleDBContract.Notification.TABLE_NAME, toReturn, null, null, null, null, null);
     }
 
+    Cursor getRemedies() {
+        SQLiteDatabase database = this.getReadableDatabase();
+        String[] toReturn = {
+                SampleDBContract.Remedy._ID,
+                SampleDBContract.Remedy.COLUMN_TITLE,
+                SampleDBContract.Remedy.COLUMN_BODY
+        };
+
+        return database.query(SampleDBContract.Remedy.TABLE_NAME, toReturn, null, null, null, null, null);
+    }
     Cursor getMessages() {
         SQLiteDatabase database = this.getReadableDatabase();
         String [] toReturn = {

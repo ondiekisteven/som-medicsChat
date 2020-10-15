@@ -2,6 +2,8 @@ package cf.somwaki.medicalchat;
 
 import android.provider.BaseColumns;
 
+import com.google.android.material.tabs.TabLayout;
+
 class SampleDBContract {
     SampleDBContract(){}
 
@@ -28,4 +30,18 @@ class SampleDBContract {
                 ")";
 
     }
+
+    static class Remedy implements BaseColumns {
+        static final String TABLE_NAME = "remedies";
+        static final String COLUMN_TITLE = "title";
+        static final String COLUMN_BODY = "body";
+
+        static final String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(" +
+                _ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_TITLE + " TEXT, " +
+                COLUMN_BODY + " TEXT" +
+                ")";
+    }
+
+
 }
