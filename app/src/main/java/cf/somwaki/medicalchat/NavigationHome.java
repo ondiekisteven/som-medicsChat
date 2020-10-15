@@ -39,7 +39,7 @@ public class NavigationHome extends AppCompatActivity {
     FirebaseAuth mAuth;
     private static final int RC_SIGN_IN = 123;
     public static String TOKEN;
-    CardView chat_cardView, notificationCardView, appointmentsCardView, eClinicCardView, pharmacyCardView;
+    CardView chat_cardView, notificationCardView, appointmentsCardView, eClinicCardView, pharmacyCardView, profileCardView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +48,7 @@ public class NavigationHome extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         chat_cardView = (CardView)findViewById(R.id.chat_cardView);
+        profileCardView = (CardView) findViewById(R.id.profileCard);
         notificationCardView = (CardView) findViewById(R.id.notifiation_cardView);
         appointmentsCardView = (CardView) findViewById(R.id.appointmentsCard);
         eClinicCardView = (CardView) findViewById(R.id.eClinicCard);
@@ -153,7 +154,20 @@ public class NavigationHome extends AppCompatActivity {
                 startActivity(openClinicChooser);
             }
         });
-
+        pharmacyCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent remedies = new Intent(getApplicationContext(), RemediesList.class);
+                startActivity(remedies);
+            }
+        });
+        profileCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent profile = new Intent(getApplicationContext(), Profile.class);
+                startActivity(profile);
+            }
+        });
     }
 
 }
