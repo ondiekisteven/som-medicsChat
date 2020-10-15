@@ -75,7 +75,13 @@ public class Appointments extends AppCompatActivity implements DatePickerDialog.
         String time = Integer.toString(calendar.get(Calendar.HOUR)) +":"+Integer.toString(calendar.get(Calendar.MINUTE));
 
         // GET VALUES
-        String pps;
+        String with, pps;
+        if (patientEmail.getText().toString().isEmpty()) {
+            patientEmail.setError("Value cannot be empty");
+            return;
+        }else{
+            with = patientEmail.getText().toString();
+        }
         if (purpose.getText().toString().isEmpty()) {
             purpose.setError("Purpose cannot be empty");
             return;
@@ -85,6 +91,7 @@ public class Appointments extends AppCompatActivity implements DatePickerDialog.
 
         // CREATE INTENT
         Intent intent = new Intent(this, MyBroadcastReceiver.class);
+        intent.putExtra("with", with);
         intent.putExtra("purpose", pps);
         intent.putExtra("date", date);
         intent.putExtra("time", time);
